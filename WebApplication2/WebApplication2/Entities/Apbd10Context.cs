@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using WebApplication2.Entities;
 
 namespace WebApplication2.Entities;
 
-public partial class Apbd10Context : DbContext
+public partial class ApbdContext : DbContext
 {
-    public Apbd10Context()
+    public ApbdContext()
     {
     }
 
-    public Apbd10Context(DbContextOptions<Apbd10Context> options)
+    public ApbdContext(DbContextOptions<ApbdContext> options)
         : base(options)
     {
     }
@@ -25,7 +24,7 @@ public partial class Apbd10Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Data Source=(LocalDb)\\MSSQLLocalDb; Initial Catalog=APBD10;Integrated Security=True;Encrypt=False");
+        => optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDb;Initial Catalog=APBD;Integrated Security=True;Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
